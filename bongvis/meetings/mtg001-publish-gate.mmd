@@ -1,0 +1,19 @@
+flowchart LR
+    A["📝 문서 작성 완료<br/><br/>🔍 4단 게이트<br/>비율 · 의미<br/>스크린샷 · XHTML"]
+    A --> C{"🗄️ 게시 위치가<br/>정본으로<br/>등록돼<br/>있나?"}
+
+    C -->|"❌ 비었거나<br/>정본과 다르다"| D["🖥️ 사용자에게<br/>위치를<br/>확인한다<br/><br/>예외 없음"]
+    C -->|"✅ 정본과<br/>일치"| G
+
+    D -->|"✅ 위치<br/>확정"| G["🗄️ team.json 에<br/>정본 등록<br/><br/>☁️ Confluence<br/>게시"]
+    D -->|"⬜ 보류"| F["🔄 게시하지<br/>않는다<br/><br/>로컬 HTML 만<br/>남긴다"]
+    A -.->|"🔴 게이트<br/>불통과"| F
+
+    classDef gate fill:#FFF4E5,stroke:#D97706,stroke-width:2px
+    classDef stop fill:#FDECEA,stroke:#C0392B,stroke-width:2px
+    classDef go fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px
+    classDef start fill:#EAF2FB,stroke:#1F6FEB,stroke-width:2px
+    class C,D gate
+    class F stop
+    class G go
+    class A start

@@ -7,7 +7,15 @@
         "parent_page_id": "316702732",
         "space": "KMS",
         "base_url": "https://hc-support.atlassian.net/wiki",
-        "note": "정본 — 2026-09-13 사용자 확인 후 등록. 기존 게시본: 318767106(플랫폼 비교) · 318668804(선언형 UI) · ADR-001"
+        "note": "정본 — 2026-09-13 사용자 확인 후 등록. 기존 게시본: 318767106(플랫폼 비교) · 318668804(선언형 UI) · ADR-001",
+        "_warning": "confluence.py 의 R19-2 '알려진 폴더' 목록에 없어 --confirm-outside 없이는 막힌다. 우회하지 말고 매번 사용자에게 확인한다."
+      },
+      {
+        "doc_type": "meeting",
+        "parent_page_id": "316768276",
+        "space": "KMS",
+        "base_url": "https://hc-support.atlassian.net/wiki",
+        "note": "[Agent][Practice] Planning — 훈련 결과. 2026-09-13 사용자 확인 후 등록. 연습·훈련 성격 산출물은 여기. 게시본: 318734380(MTG-001)"
       }
     ],
     "method": "script",
