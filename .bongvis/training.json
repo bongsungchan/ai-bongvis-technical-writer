@@ -45,13 +45,44 @@
     },
     "house_style": {
       "_comment": "문서 품질 규칙. 실사용 채점 루프(10점→80점→90점)에서 도출. 정본은 bongvis/HOUSE-STYLE.md, 집행은 templates/*.json 의 rules_from_training.",
-      "runs": 5,
+      "runs": 6,
       "scores": [
-        {"doc": "플랫폼 비교", "version": "v1", "score": 10, "note": "Mermaid 없음·가독성 없음·내부 문서 참조 오염"},
-        {"doc": "플랫폼 비교", "version": "v2", "score": null, "note": "Mermaid 도입·내부 참조 제거"},
-        {"doc": "플랫폼 비교", "version": "v3", "score": 80, "note": "가독성 85 / Mermaid 95 / 품질 75"},
-        {"doc": "플랫폼 비교", "version": "v4", "score": 90, "note": "통과 — 범위 한정·출처 하이퍼링크"},
-        {"doc": "선언형 UI 설명서", "version": "v1", "score": 90, "note": "통과 — 첫 시도에 통과. HOUSE-STYLE 적용 효과"}
+        {
+          "doc": "플랫폼 비교",
+          "version": "v1",
+          "score": 10,
+          "note": "Mermaid 없음·가독성 없음·내부 문서 참조 오염"
+        },
+        {
+          "doc": "플랫폼 비교",
+          "version": "v2",
+          "score": null,
+          "note": "Mermaid 도입·내부 참조 제거"
+        },
+        {
+          "doc": "플랫폼 비교",
+          "version": "v3",
+          "score": 80,
+          "note": "가독성 85 / Mermaid 95 / 품질 75"
+        },
+        {
+          "doc": "플랫폼 비교",
+          "version": "v4",
+          "score": 90,
+          "note": "통과 — 범위 한정·출처 하이퍼링크"
+        },
+        {
+          "doc": "선언형 UI 설명서",
+          "version": "v1",
+          "score": 90,
+          "note": "통과 — 첫 시도에 통과. HOUSE-STYLE 적용 효과"
+        },
+        {
+          "doc": "ADR-001 변환기 결정",
+          "version": "v1",
+          "score": 0,
+          "note": "문서 품질과 무관하게 0점 — publish.targets 가 비어 있는데 AskUserQuestion 없이 게시 시도"
+        }
       ],
       "rules": [
         {
@@ -102,6 +133,13 @@
           "wrong": "이스케이프된 <br>·&nbsp;, 목적문 앞에 낀 목차, 빈 헤더 띠가 게시본에 들어갔다. 코드 검사로는 보이지 않았고 스크린샷으로만 드러났다",
           "changed": "bongvis/HOUSE-STYLE.md 7",
           "rule": "게시 전 4단 게이트 — 다이어그램 비율 측정 · 이미지 육안 확인 · HTML 스크린샷 · storage XHTML 파싱 검증"
+        },
+        {
+          "id": "hs-r8",
+          "learned": "2026-09-13",
+          "wrong": "publish.targets 가 비어 있는데 '직전 세션에 같은 폴더에 올렸다'를 근거로 확인 없이 게시하려 했다. 내가 만든 IDENTITY 8-3·HOUSE-STYLE 규칙을 내가 어겼고, 문서 품질과 무관하게 0점을 받았다",
+          "changed": "bongvis/HOUSE-STYLE.md 6-1 신규 · bongvis.team.json publish.targets 등록",
+          "rule": "게시 전 AskUserQuestion 은 예외 없다. 직전에 같은 곳에 올렸다는 사실은 확인을 건너뛸 근거가 아니다. 확인받은 위치는 즉시 publish.targets 에 등록한다"
         }
       ],
       "unverified": 0

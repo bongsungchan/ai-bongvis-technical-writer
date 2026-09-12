@@ -1,0 +1,24 @@
+{
+  "_comment": "조직 층 설정. 커밋한다. 비밀은 절대 넣지 않는다 — 토큰은 .env 에만 둔다.",
+  "publish": {
+    "targets": [
+      {
+        "doc_type": "*",
+        "parent_page_id": "316702732",
+        "space": "KMS",
+        "base_url": "https://hc-support.atlassian.net/wiki",
+        "note": "정본 — 2026-09-13 사용자 확인 후 등록. 기존 게시본: 318767106(플랫폼 비교) · 318668804(선언형 UI) · ADR-001"
+      }
+    ],
+    "method": "script",
+    "script_path": "~/Desktop/한화에너지/HEIS/05-report/confluence/confluence.py",
+    "_script_note": "게시 대상 프로젝트 소유. 수정하지 않는다. 정본 밖 게시를 막는 --confirm-outside 안전장치를 우회하지 않는다.",
+    "converter": "scripts/md2storage.py",
+    "_converter_note": "ADR-001 참조 — 기존 md2conf.py 를 고치지 않고 자체 변환기를 쓴다.",
+    "credential_vars": ["JIRA_EMAIL", "JIRA_API_TOKEN"],
+    "_credential_note": "Atlassian 계정 공용 토큰이라 Confluence 도 이 변수를 쓴다. CONFLUENCE_* 를 새로 만들지 않는다."
+  },
+  "glossary": [],
+  "template_overrides": {},
+  "doc_style": {}
+}

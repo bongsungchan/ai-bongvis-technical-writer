@@ -55,7 +55,8 @@
     "다이어그램은 렌더 후 비율(0.8~3.0)을 측정하고 눈으로 확인한다 (HOUSE-STYLE 4)",
     "출처는 번호 각주 + 하단 하이퍼링크. URL 을 열어 확인한 것만 인용한다 (HOUSE-STYLE 5)",
     "로컬 산출물은 .md 가 아니라 HTML 로 만든다 (HOUSE-STYLE 6)",
-    "게시 전 4단 게이트를 거친다 — 비율·의미·스크린샷·XHTML 파싱 (HOUSE-STYLE 7)"
+    "게시 전 4단 게이트를 거친다 — 비율·의미·스크린샷·XHTML 파싱 (HOUSE-STYLE 7)",
+    "게시 전 AskUserQuestion 으로 위치를 확인한다 — publish.targets 가 비었거나 정본과 다르면 예외 없이 (HOUSE-STYLE 6-1)"
   ],
   "house_style": "bongvis/HOUSE-STYLE.md"
 }
