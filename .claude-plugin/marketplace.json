@@ -1,0 +1,14 @@
+{
+  "name": "ai-bongvis",
+  "owner": {
+    "name": "qhdtjdcks",
+    "email": "qhdtjdcks@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "technical-writer",
+      "source": "./",
+      "description": "기술 문서 작성 지원 플러그인 — README, API 문서, 릴리즈 노트, ADR 작성 및 문서 검수."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "technical-writer",
+  "description": "기술 문서 작성 지원 플러그인 — 코드/변경사항을 읽어 README, API 문서, 릴리즈 노트, ADR 등을 작성하고 검수한다.",
+  "version": "0.1.0",
+  "author": {
+    "name": "qhdtjdcks",
+    "email": "qhdtjdcks@gmail.com"
+  },
+  "keywords": ["documentation", "technical-writing", "adr", "release-notes"]
+}
