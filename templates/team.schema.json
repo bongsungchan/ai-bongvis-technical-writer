@@ -1,8 +1,17 @@
 {
   "_comment": "<프로젝트>/bongvis.team.json 생성 시 이 스키마를 기준으로 채운다. 조직 층 — 커밋한다. 비밀은 절대 넣지 않는다.",
   "publish": {
-    "target": null,
-    "note": "Stage 1 에서는 null (로컬 전용). Stage 2 부터 Confluence space/parent page 등을 채운다."
+    "targets": [],
+    "_targets_example": [
+      { "doc_type": "adr", "parent_page_id": "317948393", "note": "정본 — New APP Project 하위" }
+    ],
+    "method": null,
+    "_method_example": "script | mcp | rest",
+    "script_path": null,
+    "_script_path_note": "method=script 일 때 실제로 게시를 수행하는 기존 스크립트 경로. 새로 만들지 않는다 — 이미 있으면 재사용한다.",
+    "credential_vars": [],
+    "_credential_vars_note": "script/rest 가 실제로 읽는 .env 변수명을 그대로 적는다. 새 변수명을 임의로 만들지 않는다 (예: JIRA_EMAIL, JIRA_API_TOKEN — Atlassian 계정 토큰은 Jira/Confluence 공용일 수 있다).",
+    "note": "Stage 1 에서는 targets=[] (로컬 전용). targets 에 없는 위치에는 게시하지 않는다 — 다르면 작성 전에 사람에게 확인한다."
   },
   "glossary": [],
   "template_overrides": {},
