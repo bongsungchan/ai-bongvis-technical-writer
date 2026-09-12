@@ -7,6 +7,8 @@ description: 회의록/ADR/PRD/FRD/TDD 를 새로 쓰거나 개정한다. "문�
 
 이 스킬은 `commands/write.md`(신규 작성)와 `commands/revise.md`(개정)의 절차를 그대로 수행한다. 사용자가 슬래시 커맨드 없이 자연어로 문서 작성을 요청했을 때 진입점이 된다.
 
+> **작성 전에 [`bongvis/HOUSE-STYLE.md`](../../bongvis/HOUSE-STYLE.md) 를 읽는다.** 작성·게시 실무 규칙의 정본이며, 도구는 `scripts/` 에 있다.
+
 ## 판단
 
 - "새로 만들어줘/작성해줘" 류 → `/write` 절차

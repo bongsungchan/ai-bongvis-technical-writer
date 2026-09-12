@@ -1,17 +1,47 @@
 {
   "id": "meeting",
   "name_ko": "회의록",
-  "front_matter": ["id", "date", "attendees", "related"],
+  "front_matter": [
+    "id",
+    "date",
+    "attendees",
+    "related"
+  ],
   "sections": [
-    { "key": "agenda",   "required": true, "ask": "안건" },
-    { "key": "decisions","required": true, "ask": "무엇이 정해졌나" },
-    { "key": "open",     "required": true, "ask": "무엇이 안 정해졌나 (미결)" },
-    { "key": "next",     "required": true, "ask": "다음 할 일과 담당자" }
+    {
+      "key": "agenda",
+      "required": true,
+      "ask": "안건"
+    },
+    {
+      "key": "decisions",
+      "required": true,
+      "ask": "무엇이 정해졌나"
+    },
+    {
+      "key": "open",
+      "required": true,
+      "ask": "무엇이 안 정해졌나 (미결)"
+    },
+    {
+      "key": "next",
+      "required": true,
+      "ask": "다음 할 일과 담당자"
+    }
   ],
   "diagram": {
     "when": "결정 간 선후 관계나 승인 흐름이 있을 때만",
-    "type": ["flowchart"]
+    "type": [
+      "flowchart"
+    ]
   },
   "style": "발언을 받아쓰지 않는다. 결정과 미결을 분리해서 남긴다.",
-  "rules_from_training": []
+  "rules_from_training": [
+    "최상단에 목적 한 줄과 결정 요약을 둔다 (HOUSE-STYLE 1)",
+    "다이어그램은 렌더 후 비율(0.8~3.0)을 측정하고 눈으로 확인한다 (HOUSE-STYLE 4)",
+    "출처는 번호 각주 + 하단 하이퍼링크. URL 을 열어 확인한 것만 인용한다 (HOUSE-STYLE 5)",
+    "로컬 산출물은 .md 가 아니라 HTML 로 만든다 (HOUSE-STYLE 6)",
+    "게시 전 4단 게이트를 거친다 — 비율·의미·스크린샷·XHTML 파싱 (HOUSE-STYLE 7)"
+  ],
+  "house_style": "bongvis/HOUSE-STYLE.md"
 }

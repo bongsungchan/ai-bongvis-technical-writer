@@ -1,19 +1,61 @@
 {
   "id": "adr",
   "name_ko": "의사결정 기록",
-  "front_matter": ["id", "status", "date", "supersedes", "related"],
+  "front_matter": [
+    "id",
+    "status",
+    "date",
+    "supersedes",
+    "related"
+  ],
   "sections": [
-    { "key": "context",      "required": true, "ask": "무엇을 정해야 했나" },
-    { "key": "options",      "required": true, "ask": "검토한 대안과 각각의 탈락 사유" },
-    { "key": "decision",     "required": true, "ask": "무엇으로 정했나" },
-    { "key": "why",          "required": true, "ask": "왜 그것인가" },
-    { "key": "consequences", "required": true, "ask": "이 결정으로 치르는 대가" },
-    { "key": "unknown",      "required": true, "ask": "확인하지 못한 것" }
+    {
+      "key": "context",
+      "required": true,
+      "ask": "무엇을 정해야 했나"
+    },
+    {
+      "key": "options",
+      "required": true,
+      "ask": "검토한 대안과 각각의 탈락 사유"
+    },
+    {
+      "key": "decision",
+      "required": true,
+      "ask": "무엇으로 정했나"
+    },
+    {
+      "key": "why",
+      "required": true,
+      "ask": "왜 그것인가"
+    },
+    {
+      "key": "consequences",
+      "required": true,
+      "ask": "이 결정으로 치르는 대가"
+    },
+    {
+      "key": "unknown",
+      "required": true,
+      "ask": "확인하지 못한 것"
+    }
   ],
   "diagram": {
     "when": "대안이 3개 이상이거나 상태 전이가 있을 때",
-    "type": ["flowchart", "stateDiagram"]
+    "type": [
+      "flowchart",
+      "stateDiagram"
+    ]
   },
   "style": "결정문. 서술을 늘리지 않는다.",
-  "rules_from_training": []
+  "rules_from_training": [
+    "결정문이다 — ✅채택/❌탈락 판정 기호를 쓴다 (HOUSE-STYLE 3)",
+    "최상단: 목적 한 줄 → 결론 콜아웃 → 메타표 → 목차 순 (HOUSE-STYLE 1)",
+    "결정과 무관한 배경 지식은 부록으로 내리거나 뺀다 (HOUSE-STYLE 2)",
+    "다이어그램은 렌더 후 비율(0.8~3.0)을 측정하고 눈으로 확인한다 (HOUSE-STYLE 4)",
+    "출처는 번호 각주 + 하단 하이퍼링크. URL 을 열어 확인한 것만 인용한다 (HOUSE-STYLE 5)",
+    "로컬 산출물은 .md 가 아니라 HTML 로 만든다 (HOUSE-STYLE 6)",
+    "게시 전 4단 게이트를 거친다 — 비율·의미·스크린샷·XHTML 파싱 (HOUSE-STYLE 7)"
+  ],
+  "house_style": "bongvis/HOUSE-STYLE.md"
 }

@@ -5,6 +5,8 @@ argument-hint: [원본 경로 또는 페이지 ID]
 
 `bongvis/IDENTITY.md` 4절의 규칙을 따른다. `/write` 와 달리 새 문서를 만들지 않고 원본을 이어 쓴다.
 
+> **작성 전에 [`bongvis/HOUSE-STYLE.md`](../bongvis/HOUSE-STYLE.md) 를 읽는다.** 작성·게시 실무 규칙의 정본이며, 도구는 `scripts/` 에 있다.
+
 1. `$ARGUMENTS` 로 받은 원본(로컬 경로 또는 Confluence 페이지 ID)을 읽는다. 없으면 경로를 묻는다.
 2. 원본의 문서 종류를 판별해 해당 `templates/<종류>.json` 을 로드한다.
 3. 무엇이 바뀌는지 사용자에게 확인한다 — 새 재료(입력 소스는 `/write` Q2와 동일하게 처리).

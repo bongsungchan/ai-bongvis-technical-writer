@@ -1,18 +1,54 @@
 {
   "id": "frd",
   "name_ko": "기능 요구사항 정의서",
-  "front_matter": ["id", "status", "date", "related"],
+  "front_matter": [
+    "id",
+    "status",
+    "date",
+    "related"
+  ],
   "sections": [
-    { "key": "feature",    "required": true, "ask": "어떤 기능인가" },
-    { "key": "io",         "required": true, "ask": "입력과 출력" },
-    { "key": "states",     "required": true, "ask": "상태와 상태 전이" },
-    { "key": "exceptions", "required": true, "ask": "예외 상황과 처리" },
-    { "key": "validation", "required": true, "ask": "무엇을 확인하면 된 것으로 보나" }
+    {
+      "key": "feature",
+      "required": true,
+      "ask": "어떤 기능인가"
+    },
+    {
+      "key": "io",
+      "required": true,
+      "ask": "입력과 출력"
+    },
+    {
+      "key": "states",
+      "required": true,
+      "ask": "상태와 상태 전이"
+    },
+    {
+      "key": "exceptions",
+      "required": true,
+      "ask": "예외 상황과 처리"
+    },
+    {
+      "key": "validation",
+      "required": true,
+      "ask": "무엇을 확인하면 된 것으로 보나"
+    }
   ],
   "diagram": {
     "when": "상태 전이가 있거나 예외 분기가 여럿일 때",
-    "type": ["stateDiagram", "flowchart"]
+    "type": [
+      "stateDiagram",
+      "flowchart"
+    ]
   },
   "style": "정상 경로만 쓰지 않는다. 예외 경로를 정상 경로만큼 자세히 쓴다.",
-  "rules_from_training": []
+  "rules_from_training": [
+    "최상단 3단 구성 고정 (HOUSE-STYLE 1)",
+    "기능 명세 범위를 벗어난 플랫폼·인프라 선택은 다루지 않는다 (HOUSE-STYLE 2)",
+    "다이어그램은 렌더 후 비율(0.8~3.0)을 측정하고 눈으로 확인한다 (HOUSE-STYLE 4)",
+    "출처는 번호 각주 + 하단 하이퍼링크. URL 을 열어 확인한 것만 인용한다 (HOUSE-STYLE 5)",
+    "로컬 산출물은 .md 가 아니라 HTML 로 만든다 (HOUSE-STYLE 6)",
+    "게시 전 4단 게이트를 거친다 — 비율·의미·스크린샷·XHTML 파싱 (HOUSE-STYLE 7)"
+  ],
+  "house_style": "bongvis/HOUSE-STYLE.md"
 }

@@ -1,6 +1,12 @@
 # Bongvis
 
-개발 문서(회의록·ADR·PRD·FRD·TDD)를 정확성 우선으로 작성·개정·검수하는 Claude Code 플러그인. 규격 정본은 [`bongvis/IDENTITY.md`](bongvis/IDENTITY.md).
+개발 문서(회의록·ADR·PRD·FRD·TDD)를 정확성 우선으로 작성·개정·검수하는 Claude Code 플러그인.
+
+| 정본 | 내용 |
+|---|---|
+| [`bongvis/IDENTITY.md`](bongvis/IDENTITY.md) | 정체성·원칙 — 무엇을 지키는가 |
+| [`bongvis/HOUSE-STYLE.md`](bongvis/HOUSE-STYLE.md) | 작성·게시 실무 규칙 — 어떻게 쓰는가 (**검증됨**, 90점 통과 2건) |
+| [`scripts/`](scripts/) | 검증된 도구 — HTML 산출·Confluence storage 변환·Mermaid 테마 |
 
 ## 설치
 

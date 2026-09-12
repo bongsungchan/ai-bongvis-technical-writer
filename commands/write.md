@@ -5,6 +5,8 @@ argument-hint: [문서 종류] [입력 소스]
 
 `bongvis/IDENTITY.md` 5절의 흐름을 그대로 따른다. 템플릿은 `templates/*.json` 에 있다.
 
+> **작성 전에 [`bongvis/HOUSE-STYLE.md`](../bongvis/HOUSE-STYLE.md) 를 반드시 읽는다.** 최상단 구성·범위 한정·강조 기호·다이어그램 비율·출처 하이퍼링크·HTML 산출물·게시 전 4단 게이트가 거기에 있다. 도구는 `scripts/` 에 있으니 재발명하지 않는다.
+
 ## 0. 설정 확인
 
 `~/.bongvis/user.json` 과 프로젝트의 `bongvis.team.json` 이 있는지 확인한다. 둘 다 없으면 `/setup custom` 으로 안내하고 멈춘다. 있으면 조용히 읽고 진행한다(다시 보여주지 않는다).

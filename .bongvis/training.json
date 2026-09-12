@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "by_type": {
+    "meta": {
+      "_comment": "문서 템플릿이 아니라 /setup·/write 절차 자체에 대한 학습. by_type 스키마를 확장해 사용.",
+      "runs": 2,
+      "rules": [
+        {
+          "id": "meta-r1",
+          "learned": "2026-09-12",
+          "wrong": "/setup env 가 CONFLUENCE_BASE_URL/EMAIL/API_TOKEN 이라는 새 변수명을 프로젝트 실태 확인 없이 먼저 제안함. HEIS 는 이미 confluence.py 스크립트가 JIRA_EMAIL/JIRA_API_TOKEN(Atlassian 계정 공용 토큰)을 쓰고 있었음",
+          "changed": "commands/setup.md · env 절차, templates/team.schema.json · publish.method/script_path/credential_vars",
+          "rule": "새 자격정보 변수를 만들기 전에 기존 게시 스크립트·기존 .env 변수·MCP 커넥터 순으로 먼저 찾는다"
+        },
+        {
+          "id": "meta-r2",
+          "learned": "2026-09-12",
+          "wrong": "게시 대상이 단일 값(publish.target)이라 종류별 정본이 여러 개인 프로젝트(HEIS: 상위 폴더/신규앱 하위 폴더)를 표현 못 함. 사용자가 지정한 폴더가 정본과 달랐던 사례 발생",
+          "changed": "templates/team.schema.json · publish.target → publish.targets(다중), commands/write.md · 7절",
+          "rule": "사용자가 지정한 게시 대상이 등록된 정본과 다르면 추측하지 않고 AskUserQuestion 으로 정본 사용/신규 등록/보류 중 확인한다"
+        },
+        {
+          "id": "meta-r3",
+          "learned": "2026-09-12",
+          "wrong": "여러 질문을 한 번에 서술형으로 나열해서 물음 — 어느 답이 몇 번 질문에 대한 것인지 불명확해짐",
+          "changed": "commands/write.md · 1절, commands/setup.md, IDENTITY.md · 5절",
+          "rule": "질문은 번호로 하나씩, 보기는 a/b/c 로 매겨서 묻는다. AskUserQuestion 을 적극 쓴다"
+        },
+        {
+          "id": "meta-r4",
+          "learned": "2026-09-12",
+          "wrong": "기존 게시 스크립트가 정본 밖 게시를 막는 자체 안전장치(--confirm-outside 류 플래그)를 갖고 있었는데, 이걸 우회하는 별도 로직을 만들 위험이 있었음",
+          "changed": "commands/write.md · 7절, IDENTITY.md · 8-3",
+          "rule": "기존 스크립트의 안전장치는 우회하지 않는다. 사람이 이미 확인한 뒤에만 그 플래그를 그대로 사용한다"
+        },
+        {
+          "id": "meta-r5",
+          "learned": "2026-09-12",
+          "wrong": "문서 id 체계를 이 플러그인이 새로 만들려 했으나, 프로젝트에 이미 로컬 결정 대장(00-plan/decisions.md, D-001 식)이 있으면 그게 우선이어야 함",
+          "changed": "commands/write.md · 5절, IDENTITY.md · 12절",
+          "rule": "id 체계는 프로젝트에 이미 있는 로컬 대장을 먼저 찾아 따르고, 없을 때만 잠정 번호를 매긴다"
+        }
+      ],
+      "unverified": 0
+    },
+    "house_style": {
+      "_comment": "문서 품질 규칙. 실사용 채점 루프(10점→80점→90점)에서 도출. 정본은 bongvis/HOUSE-STYLE.md, 집행은 templates/*.json 의 rules_from_training.",
+      "runs": 5,
+      "scores": [
+        {"doc": "플랫폼 비교", "version": "v1", "score": 10, "note": "Mermaid 없음·가독성 없음·내부 문서 참조 오염"},
+        {"doc": "플랫폼 비교", "version": "v2", "score": null, "note": "Mermaid 도입·내부 참조 제거"},
+        {"doc": "플랫폼 비교", "version": "v3", "score": 80, "note": "가독성 85 / Mermaid 95 / 품질 75"},
+        {"doc": "플랫폼 비교", "version": "v4", "score": 90, "note": "통과 — 범위 한정·출처 하이퍼링크"},
+        {"doc": "선언형 UI 설명서", "version": "v1", "score": 90, "note": "통과 — 첫 시도에 통과. HOUSE-STYLE 적용 효과"}
+      ],
+      "rules": [
+        {
+          "id": "hs-r1",
+          "learned": "2026-09-12",
+          "wrong": "목차가 목적문·결론보다 앞에 나와 스크롤해야 결론이 보였고, 문서 목적이 한눈에 안 보였다",
+          "changed": "bongvis/HOUSE-STYLE.md 1 · templates/*.json rules_from_training",
+          "rule": "최상단을 목적 한 줄 → 결론 콜아웃 → 메타표 → 목차 순으로 고정한다"
+        },
+        {
+          "id": "hs-r2",
+          "learned": "2026-09-12",
+          "wrong": "플랫폼 비교 문서에 로컬 DB 라이브러리·동기화 시퀀스·사진 업로드 큐 등 서비스 설계 내용이 들어갔다. '요구하지 않은 내용이 들어가 있음' 지적",
+          "changed": "bongvis/HOUSE-STYLE.md 2 · templates/*.json rules_from_training",
+          "rule": "문서 종류가 정한 범위를 벗어나지 않는다. 빼도 독자가 결정할 수 있으면 부록으로 내리거나 삭제한다"
+        },
+        {
+          "id": "hs-r3",
+          "learned": "2026-09-12",
+          "wrong": "강조·포인트가 없어 무엇이 중요하고 무엇이 불필요한지 구분되지 않았다",
+          "changed": "bongvis/HOUSE-STYLE.md 3 · scripts/build_html.py · scripts/md2storage.py",
+          "rule": "판정(✅❌⚠️⬜)·무게(🔴🟡🟢)·콜아웃 4종 기호를 고정해 쓴다. 단 판정 기호는 결정문 전용이며 설명서에는 쓰지 않는다"
+        },
+        {
+          "id": "hs-r4",
+          "learned": "2026-09-12",
+          "wrong": "세로로 긴 다이어그램(비율 0.33)이 900px 폭에서 2742px 로 늘어져 한 화면에 안 들어왔다. 또 의미가 뒤집혀 보이는 그림을 그릴 뻔했다",
+          "changed": "bongvis/HOUSE-STYLE.md 4 · scripts/mermaid-theme.json",
+          "rule": "렌더 후 비율(0.8~3.0)을 측정하고, 이미지를 열어 의미가 맞는지 눈으로 확인한다. subgraph 는 역순 배치되며 세로 배치는 ~~~ 로 강제한다"
+        },
+        {
+          "id": "hs-r5",
+          "learned": "2026-09-12",
+          "wrong": "md2conf.py 가 마크다운 링크를 변환하지 못해 본문에 ([도메인](URL)) 이 날것으로 박혔다",
+          "changed": "scripts/md2storage.py 신규 · bongvis/HOUSE-STYLE.md 5",
+          "rule": "출처는 번호 각주 + 하단 하이퍼링크. URL 을 실제로 열어 확인한 것만 인용하고, 압축 전달된 본문은 직접 인용하지 않는다"
+        },
+        {
+          "id": "hs-r6",
+          "learned": "2026-09-12",
+          "wrong": "로컬 산출물을 .md 로 넘겨 '읽을 수 있겠냐'는 지적을 받았다",
+          "changed": "scripts/build_html.py 신규 · bongvis/HOUSE-STYLE.md 6",
+          "rule": "로컬 산출물은 SVG 를 인라인한 단일 HTML 로 만든다. 마크다운은 변환 소스로만 취급한다"
+        },
+        {
+          "id": "hs-r7",
+          "learned": "2026-09-12",
+          "wrong": "이스케이프된 <br>·&nbsp;, 목적문 앞에 낀 목차, 빈 헤더 띠가 게시본에 들어갔다. 코드 검사로는 보이지 않았고 스크린샷으로만 드러났다",
+          "changed": "bongvis/HOUSE-STYLE.md 7",
+          "rule": "게시 전 4단 게이트 — 다이어그램 비율 측정 · 이미지 육안 확인 · HTML 스크린샷 · storage XHTML 파싱 검증"
+        }
+      ],
+      "unverified": 0
+    }
+  }
+}
