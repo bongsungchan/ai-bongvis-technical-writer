@@ -1,0 +1,18 @@
+{
+  "id": "tdd",
+  "name_ko": "기술 설계 문서",
+  "front_matter": ["id", "status", "date", "related"],
+  "sections": [
+    { "key": "structure",  "required": true, "ask": "전체 구조" },
+    { "key": "interfaces", "required": true, "ask": "인터페이스/API" },
+    { "key": "data",       "required": true, "ask": "데이터 모델" },
+    { "key": "risks",      "required": true, "ask": "위험 요소" },
+    { "key": "options",    "required": true, "ask": "검토했던 다른 구조와 탈락 사유" }
+  ],
+  "diagram": {
+    "when": "컴포넌트가 3개 이상이거나 데이터 흐름에 분기가 있을 때",
+    "type": ["flowchart", "sequenceDiagram"]
+  },
+  "style": "구현 설명서가 아니라 설계 근거를 남긴다. 왜 이 구조인지가 핵심.",
+  "rules_from_training": []
+}

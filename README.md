@@ -1,29 +1,38 @@
-# technical-writer
+# Bongvis
 
-기술 문서 작성을 돕는 Claude Code 플러그인. 코드와 커밋을 근거로 README·API 문서·릴리즈 노트를 쓰고, 기존 문서를 코드와 대조해 검수한다.
+개발 문서(회의록·ADR·PRD·FRD·TDD)를 정확성 우선으로 작성·개정·검수하는 Claude Code 플러그인. 규격 정본은 [`bongvis/IDENTITY.md`](bongvis/IDENTITY.md).
 
 ## 설치
 
 ```
 /plugin marketplace add ~/Documents/ai-bongvis/technical-writer
-/plugin install technical-writer@ai-bongvis
+/plugin install bongvis@ai-bongvis
 ```
 
-## 구성
+## 명령
 
-| 종류 | 이름 | 역할 |
-|---|---|---|
-| Skill | `write-docs` | 코드를 읽고 문서 작성·갱신 |
-| Skill | `review-docs` | 문서를 코드와 대조해 오류 검출 |
-| Command | `/docs [경로]` | 대상 경로 문서화 |
-| Command | `/release-notes [git 범위]` | 커밋 범위로 릴리즈 노트 작성 |
+| 명령 | 역할 |
+|---|---|
+| `/write` | 새 문서 작성 (회의록·ADR·PRD·FRD·TDD) |
+| `/revise` | 기존 문서 개정 (원본 이어쓰기) |
+| `/setup` | 개인/조직 설정 생성, 비밀 취급, 설정 승격 |
+| `/train` | 문서 피드백 입력, 템플릿 규칙 개정 |
+
+슬래시 커맨드 없이 "ADR 써줘"처럼 자연어로 요청해도 `write-docs` 스킬이 같은 절차를 수행한다.
 
 ## 구조
 
 ```
 .claude-plugin/
-  plugin.json        # 플러그인 메타데이터
-  marketplace.json   # 로컬 마켓플레이스 정의
-commands/            # 슬래시 커맨드
-skills/              # 스킬 (SKILL.md + 참고 자료)
+  plugin.json        # 플러그인 메타데이터 (name: bongvis)
+  marketplace.json    # 로컬 마켓플레이스 정의
+bongvis/
+  IDENTITY.md          # 정체성·규칙 규격 (정본)
+commands/              # /write /revise /setup /train
+skills/write-docs/      # 자연어 트리거 진입점
+templates/              # 문서 종류별 JSON 템플릿 + 설정 스키마
 ```
+
+## 현재 단계
+
+Stage 1(개인·로컬 전용) 구현 기준. Confluence 게시·`/train import`·`/setup promote` 는 `bongvis/IDENTITY.md` 10절 Stage 2/3 항목이며, 커맨드 골격은 있으나 실 연동은 아직 없다.

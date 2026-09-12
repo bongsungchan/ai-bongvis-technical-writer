@@ -1,0 +1,18 @@
+{
+  "id": "frd",
+  "name_ko": "기능 요구사항 정의서",
+  "front_matter": ["id", "status", "date", "related"],
+  "sections": [
+    { "key": "feature",    "required": true, "ask": "어떤 기능인가" },
+    { "key": "io",         "required": true, "ask": "입력과 출력" },
+    { "key": "states",     "required": true, "ask": "상태와 상태 전이" },
+    { "key": "exceptions", "required": true, "ask": "예외 상황과 처리" },
+    { "key": "validation", "required": true, "ask": "무엇을 확인하면 된 것으로 보나" }
+  ],
+  "diagram": {
+    "when": "상태 전이가 있거나 예외 분기가 여럿일 때",
+    "type": ["stateDiagram", "flowchart"]
+  },
+  "style": "정상 경로만 쓰지 않는다. 예외 경로를 정상 경로만큼 자세히 쓴다.",
+  "rules_from_training": []
+}

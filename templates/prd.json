@@ -1,0 +1,18 @@
+{
+  "id": "prd",
+  "name_ko": "제품 요구사항 정의서",
+  "front_matter": ["id", "status", "date", "related"],
+  "sections": [
+    { "key": "problem",     "required": true, "ask": "무슨 문제를 푸는가" },
+    { "key": "users",       "required": true, "ask": "누구를 위한 것인가" },
+    { "key": "requirements","required": true, "ask": "무엇을 만드는가" },
+    { "key": "acceptance",  "required": true, "ask": "다 됐다고 판단하는 기준" },
+    { "key": "out_of_scope","required": true, "ask": "이번에 하지 않는 것" }
+  ],
+  "diagram": {
+    "when": "사용자 흐름에 분기가 있을 때",
+    "type": ["flowchart"]
+  },
+  "style": "기능 목록만 나열하지 않는다. 완료 기준이 항상 따라온다.",
+  "rules_from_training": []
+}

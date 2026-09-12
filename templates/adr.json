@@ -1,0 +1,19 @@
+{
+  "id": "adr",
+  "name_ko": "의사결정 기록",
+  "front_matter": ["id", "status", "date", "supersedes", "related"],
+  "sections": [
+    { "key": "context",      "required": true, "ask": "무엇을 정해야 했나" },
+    { "key": "options",      "required": true, "ask": "검토한 대안과 각각의 탈락 사유" },
+    { "key": "decision",     "required": true, "ask": "무엇으로 정했나" },
+    { "key": "why",          "required": true, "ask": "왜 그것인가" },
+    { "key": "consequences", "required": true, "ask": "이 결정으로 치르는 대가" },
+    { "key": "unknown",      "required": true, "ask": "확인하지 못한 것" }
+  ],
+  "diagram": {
+    "when": "대안이 3개 이상이거나 상태 전이가 있을 때",
+    "type": ["flowchart", "stateDiagram"]
+  },
+  "style": "결정문. 서술을 늘리지 않는다.",
+  "rules_from_training": []
+}

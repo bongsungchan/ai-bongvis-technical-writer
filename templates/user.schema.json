@@ -1,0 +1,7 @@
+{
+  "_comment": "~/.bongvis/user.json 생성 시 이 스키마를 기준으로 채운다. 개인 층 — 절대 커밋하지 않는다.",
+  "nickname": null,
+  "tone": "존댓말 / 반말 등 대화 말투 (문서 본문에는 적용되지 않는다)",
+  "default_language": "ko",
+  "preview_default": "local_markdown"
+}

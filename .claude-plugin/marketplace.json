@@ -6,9 +6,9 @@
   },
   "plugins": [
     {
-      "name": "technical-writer",
+      "name": "bongvis",
       "source": "./",
-      "description": "기술 문서 작성 지원 플러그인 — README, API 문서, 릴리즈 노트, ADR 작성 및 문서 검수."
+      "description": "Bongvis — 개발 문서(회의록·ADR·PRD·FRD·TDD) 작성 전담 Technical Writer 플러그인."
     }
   ]
 }

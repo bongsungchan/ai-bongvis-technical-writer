@@ -1,0 +1,17 @@
+{
+  "id": "meeting",
+  "name_ko": "회의록",
+  "front_matter": ["id", "date", "attendees", "related"],
+  "sections": [
+    { "key": "agenda",   "required": true, "ask": "안건" },
+    { "key": "decisions","required": true, "ask": "무엇이 정해졌나" },
+    { "key": "open",     "required": true, "ask": "무엇이 안 정해졌나 (미결)" },
+    { "key": "next",     "required": true, "ask": "다음 할 일과 담당자" }
+  ],
+  "diagram": {
+    "when": "결정 간 선후 관계나 승인 흐름이 있을 때만",
+    "type": ["flowchart"]
+  },
+  "style": "발언을 받아쓰지 않는다. 결정과 미결을 분리해서 남긴다.",
+  "rules_from_training": []
+}
